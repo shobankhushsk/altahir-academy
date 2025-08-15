@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Al Tahir Academy — Admissions Open</title>
+  <meta name="description" content="Al Tahir Academy in Jamshoro offering Java & Python courses with DSA, Spring, Django, Automation & more. Admissions open. Classes start 18 August." />
+  <meta name="keywords" content="Al Tahir Academy, Jamshoro, Java course, Python course, DSA, Spring, Django, Programming classes" />
+  <meta property="og:title" content="Al Tahir Academy — Admissions Open" />
+  <meta property="og:description" content="Java & Python courses (Basics → Advanced). Location: AL Tahir Public School, Sandoz, Petaro Road, Jamshoro. Contact: 0342 9611939" />
+  <meta property="og:type" content="website" />
+  <style>
+    :root{
+      --bg:#0f172a;        /* slate-900 */
+      --panel:#111827;     /* gray-900 */
+      --brand:#06b6d4;     /* cyan-500 */
+      --brand-2:#22d3ee;   /* cyan-400 */
+      --accent:#a78bfa;    /* violet-400 */
+      --text:#e5e7eb;      /* gray-200 */
+      --muted:#94a3b8;     /* slate-400 */
+      --card:#0b1220;      /* slightly darker */
+      --ok:#10b981;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Noto Sans",sans-serif;background:linear-gradient(180deg,var(--bg),#0b1020);color:var(--text)}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1100px;margin:0 auto;padding:0 16px}
+
+    /* Header */
+    header{position:sticky;top:0;z-index:50;background:rgba(17,24,39,.8);backdrop-filter:blur(8px);border-bottom:1px solid rgba(148,163,184,.15)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700}
+    .brand .logo{width:36px;height:36px;display:grid;place-items:center;background:conic-gradient(from 200deg,var(--brand),var(--accent));border-radius:12px;box-shadow:0 6px 20px rgba(34,211,238,.25)}
+    .brand span{letter-spacing:.3px}
+    .menu{display:flex;gap:18px}
+    .menu a{padding:8px 10px;border-radius:10px;color:var(--muted)}
+    .menu a:hover{background:#0b1220;color:var(--text)}
+    .cta{display:flex;gap:10px}
+    .btn{padding:10px 14px;border-radius:12px;border:1px solid rgba(148,163,184,.25);background:#0b1220}
+    .btn.primary{background:linear-gradient(90deg,var(--brand),var(--accent));color:#081018;border:none}
+    .mobile-toggle{display:none}
+
+    @media (max-width:900px){
+      .menu{display:none}
+      .mobile-toggle{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid rgba(148,163,184,.25);border-radius:10px;background:#0b1220;color:var(--text)}
+      .mobile-panel{display:none}
+      .mobile-panel.open{display:block}
+      .mobile-panel a{display:block;padding:12px 14px;border-bottom:1px dashed rgba(148,163,184,.2);color:var(--muted)}
+    }
+
+    /* Hero */
+    .hero{padding:64px 0 32px;border-bottom:1px solid rgba(148,163,184,.15)}
+    .pill{display:inline-flex;gap:8px;align-items:center;padding:6px 10px;border:1px solid rgba(34,211,238,.35);border-radius:999px;background:rgba(8,16,32,.6);color:var(--brand-2);font-size:14px}
+    .hero h1{font-size:clamp(28px,5vw,46px);line-height:1.1;margin:14px 0}
+    .hero p{color:var(--muted);max-width:760px}
+    .hero-cta{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
+
+    /* Feature cards */
+    .grid{display:grid;gap:16px}
+    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+    .grid.cols-2{grid-template-columns:repeat(2,1fr)}
+    @media (max-width:900px){.grid.cols-3{grid-template-columns:1fr}.grid.cols-2{grid-template-columns:1fr}}
+    .card{background:var(--card);border:1px solid rgba(148,163,184,.15);border-radius:18px;padding:18px}
+    .card h3{margin:0 0 6px 0}
+    .muted{color:var(--muted)}
+
+    /* Section headings */
+    section{padding:42px 0}
+    .section-title{display:flex;align-items:center;gap:10px;margin-bottom:18px}
+    .section-title .dot{width:10px;height:10px;border-radius:50%;background:linear-gradient(90deg,var(--brand),var(--accent))}
+
+    /* Lists */
+    ul.clean{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+    .tick:before{content:"✔";display:inline-block;margin-right:10px;color:var(--ok)}
+
+    /* Admissions steps */
+    .steps{counter-reset:s}
+    .step{position:relative;padding-left:44px}
+    .step:before{counter-increment:s;content:counter(s);position:absolute;left:0;top:0;width:28px;height:28px;border-radius:50%;background:linear-gradient(90deg,var(--brand),var(--accent));display:grid;place-items:center;color:#081018;font-weight:700}
+
+    /* Contact */
+    .contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:16px}
+    @media (max-width:900px){.contact-grid{grid-template-columns:1fr}}
+    form input, form textarea{width:100%;padding:12px;border-radius:12px;border:1px solid rgba(148,163,184,.25);background:#0b1220;color:var(--text)}
+    form textarea{min-height:110px}
+    form .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    @media (max-width:700px){form .row{grid-template-columns:1fr}}
+
+    footer{padding:28px 0;color:var(--muted);border-top:1px solid rgba(148,163,184,.15)}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "Al Tahir Academy",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "AL Tahir Public School, Sandoz, Petaro Road",
+      "addressLocality": "Jamshoro",
+      "addressCountry": "PK"
+    },
+    "telephone": "+92 342 9611939",
+    "sameAs": []
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="Al Tahir Academy home">
+        <div class="logo">🎓</div>
+        <span>Al Tahir Academy</span>
+      </a>
+      <nav class="menu" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#courses">Courses</a>
+        <a href="#admissions">Admissions</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="cta">
+        <a class="btn" href="tel:+923429611939">Call</a>
+        <a class="btn primary" href="https://wa.me/923429611939?text=Hi%20Al%20Tahir%20Academy%2C%20I%27m%20interested%20in%20admissions" target="_blank" rel="noopener">WhatsApp</a>
+        <button class="mobile-toggle" aria-label="Toggle menu" onclick="document.querySelector('.mobile-panel').classList.toggle('open')">Menu ▾</button>
+      </div>
+    </div>
+    <div class="mobile-panel container" aria-label="Mobile navigation">
+      <a href="#about" onclick="this.closest('.mobile-panel').classList.remove('open')">About</a>
+      <a href="#courses" onclick="this.closest('.mobile-panel').classList.remove('open')">Courses</a>
+      <a href="#admissions" onclick="this.closest('.mobile-panel').classList.remove('open')">Admissions</a>
+      <a href="#contact" onclick="this.closest('.mobile-panel').classList.remove('open')">Contact</a>
+    </div>
+  </header>
+
+  <main id="home" class="container">
+    <section class="hero">
+      <span class="pill">Admissions Open • Classes start 18 August</span>
+      <h1>Quality Programming Education in Jamshoro</h1>
+      <p>Learn industry‑relevant skills in <strong>Java</strong> and <strong>Python</strong> with hands‑on projects, DSA practice, and modern frameworks like <strong>Spring</strong> and <strong>Django</strong>. Small batches, practical labs, and career guidance included.</p>
+      <div class="hero-cta">
+        <a class="btn primary" href="#admissions">Apply Now</a>
+        <a class="btn" href="#courses">See Courses</a>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="section-title"><span class="dot"></span><h2>About Us</h2></div>
+      <div class="grid cols-3">
+        <div class="card">
+          <h3>Experienced Mentors</h3>
+          <p class="muted">Guidance from developers with real‑world project experience.</p>
+        </div>
+        <div class="card">
+          <h3>Hands‑on Learning</h3>
+          <p class="muted">Practice by building apps, games, and automation scripts.</p>
+        </div>
+        <div class="card">
+          <h3>Career Support</h3>
+          <p class="muted">Interview prep, CV review, and project portfolio advice.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="courses">
+      <div class="section-title"><span class="dot"></span><h2>Courses</h2></div>
+      <div class="grid cols-2">
+        <div class="card">
+          <h3>Java Features</h3>
+          <ul class="clean">
+            <li class="tick">OOP (Object‑Oriented Programming)</li>
+            <li class="tick">Networking</li>
+            <li class="tick">Games Development</li>
+            <li class="tick">Spring Framework</li>
+            <li class="tick">Spring Boot Framework</li>
+            <li class="tick">RMI (Remote Method Invocation)</li>
+            <li class="tick">GUI (Graphical User Interface)</li>
+            <li class="tick">Data Structures & Algorithms (DSA)</li>
+            <li class="tick">Basic to Advanced</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Python Features</h3>
+          <ul class="clean">
+            <li class="tick">Basics</li>
+            <li class="tick">OOP (Object‑Oriented Programming)</li>
+            <li class="tick">File Handling</li>
+            <li class="tick">Automation</li>
+            <li class="tick">Data Analysis</li>
+            <li class="tick">Django Framework</li>
+            <li class="tick">Data Structures & Algorithms (DSA)</li>
+            <li class="tick">Advanced</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="admissions">
+      <div class="section-title"><span class="dot"></span><h2>Admissions</h2></div>
+      <div class="grid cols-2">
+        <div class="card">
+          <h3>How to Apply</h3>
+          <div class="steps">
+            <p class="step"><strong>Contact us</strong> on call or WhatsApp for counselling.</p>
+            <p class="step"><strong>Visit campus</strong> for a quick orientation & batch timing.</p>
+            <p class="step"><strong>Submit form</strong> with CNIC copy (if available) & fee.</p>
+          </div>
+          <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
+            <a class="btn" href="tel:+923429611939">📞 Call</a>
+            <a class="btn" href="https://wa.me/923429611939?text=Hi%20Al%20Tahir%20Academy%2C%20I%27d%20like%20to%20apply">💬 WhatsApp</a>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Batch Info</h3>
+          <ul class="clean">
+            <li class="tick">Start Date: <strong>18 August</strong></li>
+            <li class="tick">Location: <strong>AL Tahir Public School, Sandoz, Petaro Road, Jamshoro</strong></li>
+            <li class="tick">Small Batches • Evening & Weekend options</li>
+            <li class="tick">Certificate on completion</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-title"><span class="dot"></span><h2>Contact</h2></div>
+      <div class="contact-grid">
+        <div class="card">
+          <h3>Get in touch</h3>
+          <p class="muted">We usually reply within a few minutes during working hours.</p>
+          <form onsubmit="event.preventDefault(); alert('Thank you! We\'ll contact you shortly.'); this.reset();">
+            <div class="row">
+              <input aria-label="Your Name" placeholder="Your Name" required />
+              <input aria-label="Phone" placeholder="Phone" type="tel" />
+            </div>
+            <input style="margin-top:12px" aria-label="Email" placeholder="Email (optional)" type="email" />
+            <textarea style="margin-top:12px" aria-label="Message" placeholder="Your message..."></textarea>
+            <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
+              <button class="btn primary" type="submit">Send Message</button>
+              <a class="btn" href="mailto:info@altahiracademy.example">Email Us</a>
+            </div>
+          </form>
+        </div>
+        <div class="card">
+          <h3>Find us</h3>
+          <p class="muted">AL Tahir Public School, Sandoz, Petaro Road, Jamshoro</p>
+          <div style="aspect-ratio:16/10;background:#0b1220;border-radius:12px;overflow:hidden;border:1px solid rgba(148,163,184,.2)">
+            <iframe title="Google Map" width="100%" height="100%" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=AL%20Tahir%20Public%20School%2C%20Sandoz%2C%20Petaro%20Road%2C%20Jamshoro&output=embed"></iframe>
+          </div>
+          <div style="margin-top:12px;display:grid;gap:6px">
+            <a class="btn" href="tel:+923429611939">📞 +92 342 9611939</a>
+            <a class="btn" href="https://wa.me/923429611939" target="_blank" rel="noopener">💬 WhatsApp Chat</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
+      <span>© <span id="year"></span> Al Tahir Academy</span>
+      <span class="muted">Built with ♥ for our students</span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
